@@ -1,0 +1,346 @@
+@charset "utf-8";
+
+$color-black :#000000;
+$color-glay:#898989;
+$color-white:#fff;
+$color-pink:#E40065;
+$color-yellow:#FDF8EB;
+
+@mixin inner {
+    max-width: 1200px;
+    margin: auto;
+    width: 80%;
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+@mixin f2 {
+    width: (560%/11.7);
+}
+
+@mixin f3 {
+    width: (370%/11.7);
+}
+
+@mixin py10 {
+    padding: 100px 0;
+}
+
+@mixin img {
+    width: 100%;
+    height: auto;
+}
+
+@mixin yu {
+    font-family: "Yu Gothic";
+}
+
+@mixin list {
+    list-style: none;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica",
+        "Helvetica Neue",
+        "Yu Gothic",
+        "Hiragino Sans",
+        "Hiragino Kaku Gothic ProN",
+        "Meiryo",
+        sans-serif;
+    font-size: 14px;
+    letter-spacing: (50em/1000);
+}
+
+/*header*/
+
+.header {
+    &__inner {
+        @include inner();
+        padding: 70px 0 100px;
+        @include flex();
+    }
+
+    &__list {
+        @include flex();
+        list-style: none;
+    }
+
+    &__item {
+        display: block;
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 30px;
+        text-decoration: none;
+        color: $color-black;
+    }
+}
+
+/*footer__*/
+
+.footer {
+
+    &__content {
+        margin-bottom: 100px;
+        background-color: $color-black;
+        text-align: center;
+        color: $color-white;
+        @include py10();
+    }
+
+    &__title {
+        font-size: 32px;
+        margin: 0;
+        margin-bottom: 30px;
+        font-weight: normal;
+    }
+
+    &__form {
+        display: flex;
+        width: 400px;
+        margin: auto;
+    }
+
+    &__in {
+        background-color: $color-white;
+        width: 300px;
+        border-radius: 0;
+        border: none;
+        height: 40px;
+    }
+
+    &__sub {
+        background-color: $color-pink;
+        font-weight: bold;
+        width: 100px;
+        border: none;
+        border-radius: 0;
+        height: 40px;
+        color: $color-white;
+    }
+
+    &__list {
+        display: inline-flex;
+        @include list();
+
+        .item {
+            padding: 0 20px;
+            border-right: 1px solid $color-white;
+            line-height: 1em;
+
+            :last-of-type {
+                border: none;
+            }
+        }
+    }
+
+    &__cr {
+        font-size: 12px;
+        text-align: right;
+        color: $color-glay;
+    }
+
+    &__inner {
+        @include inner();
+        background-color: $color-white;
+        padding: 0 0 60px;
+    }
+}
+
+/*_unit_*/
+
+.unit {
+
+    &__right {
+        width: (700%/11.7);
+    }
+
+
+    &__catch {
+        font-size: 12px;
+    }
+
+    &__title {
+        font-size: 38px;
+        font-weight: normal;
+        line-height: (49em/38);
+        margin-bottom: 30px;
+    }
+
+    &__border {
+        background-color: $color-black;
+        width: 120px;
+        height: 1px;
+        margin-bottom: 60px;
+    }
+
+
+    &__txten {
+        font-style: italic;
+        margin-top: 40px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+/*__card__*/
+
+.card {
+    &__img {
+        @include img();
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: normal;
+        margin-bottom: 5px;
+    }
+
+    &__catch {
+        font-size: 12px;
+        color: $color-glay;
+    }
+
+    &__txt {
+        margin-top: 40px;
+    }
+}
+
+/*__union__*/
+
+.union {
+    @include yu;
+
+    &__title {
+        font-size: 20px;
+        line-height: (34em/20);
+        font-weight: normal;
+        margin-top: 30px;
+    }
+
+    &__img {
+        @include img();
+        margin-bottom: 30px;
+    }
+
+    &__bg {
+        width: 100%;
+        height: 529px;
+    }
+
+    &__ab {
+        position: absolute;
+        top: 150px;
+        left: 80px
+    }
+
+    &__list {
+        @include list();
+        margin: 40px 0 0;
+
+        .item {
+            margin-bottom: 15px
+        }
+    }
+}
+
+/*__btn__*/
+
+.btn {
+    @include yu();
+    background-color: $color-pink;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: $color-white;
+    padding: 5px 13px;
+    width: auto;
+}
+
+/*_______index*/
+
+.visual {
+    margin-bottom: 100px;
+
+    &__img {
+        @include img();
+    }
+}
+
+/*works*/
+
+.works {
+    padding-bottom: 78px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__list {
+        @include flex();
+        margin-top: 60px;
+    }
+
+    &__itme {
+        @include f3();
+    }
+}
+
+/*project___*/
+
+.project {
+    background-color: $color-yellow;
+    @include py10();
+
+    &__inner {
+        @include inner();
+    }
+
+    &__list {
+        @include flex();
+        margin-top: 60px
+    }
+
+    &__item {
+        @include f2();
+    }
+
+}
+
+/*______COMPANY___*/
+
+.company {
+    @include py10();
+
+    &__inner {
+        @include inner();
+    }
+
+    &__unit {
+        @include flex();
+        margin-bottom: 60px;
+        align-items: flex-start;
+    }
+
+    &__item {
+        color: $color-white;
+        position: relative;
+        width: 100%;
+        margin-bottom: 60px;
+        height: 529px;
+    }
+
+    &__list {
+        @include flex();
+    }
+
+    &__item2 {
+        @include f3();
+    }
+}
